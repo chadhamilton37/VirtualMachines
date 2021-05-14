@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subnetName": {
+            "value": "Your subnet name"
+        },
+        "virtualNetworkId": {
+            "value": "Your Vnet Id"
+        },
+        "availabilitySetName": {
+            "value": "Your availaiblity set name"
+        },
+        "virtualMachineName": {
+            "value": "Your Vm name"
+        },
+        "adminUsername": {
+            "value": "Your local admin username"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "Your key vault Id that stores the local admin password"
+                },
+                "secretName": "Your secret name for the local admin password"
+            }
+        },
+        "domainFQDN": {
+            "value": "The FQDN of your AD DS domain"
+        },
+        "ouPath": {
+            "value": "Your OU path should you choose to specify one"
+        },
+        "domainAdminUPN": {
+            "value": "Your domain admin account UPN"
+        },
+        "domainAdminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "Your key vault Id that stores the domain admin password"
+                },
+                "secretName": "Your domain admin password"
+            }
+        },
+        "imagePublisher": {
+            "value": "MicrosoftWindowsServer"
+        },
+        "imageOffer": {
+            "value": "WindowsServer"
+        },
+        "imageSku": {
+            "value": "2019-Datacenter"
+        }
+    }
+}
